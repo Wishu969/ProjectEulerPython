@@ -31,7 +31,6 @@ def sumsmallint(n):
     for i in str(s):
         temp += ord(i) - 48
     return temp
-#inskjdfsdf
 #temp = 0
 #for i in range(1,151):
 #    print(i)
