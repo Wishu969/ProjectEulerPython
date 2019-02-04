@@ -1,3 +1,4 @@
+#finished
 def func(a,n):
     return ((a-1)**n + (a+1)**n)%a**2
 
