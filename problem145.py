@@ -1,4 +1,5 @@
-# unfinished
+# unfinished code 
+#print does not equel example on project euler
 def reverse(n):
     return int(str(n)[::-1])
 
