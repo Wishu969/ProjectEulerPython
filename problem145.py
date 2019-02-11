@@ -17,3 +17,4 @@ for i in range(10**3):
         x += 1
 
 print(x)
+#improve algorithm 
