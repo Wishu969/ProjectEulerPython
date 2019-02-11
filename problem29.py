@@ -1,9 +1,9 @@
+#solved
 distinct = []
-
-for a in range(2,6):
-    for b in range(2,6):
-        if a**b not in distinct:
-            distinct.append(a**b)
-            
+for a in range(2,101):
+    for b in range(2,101):
+        c = a**b
+        if c not in distinct:
+            distinct.append(c)
 distinct.sort()
-print(distinct)
+print(len(distinct))
