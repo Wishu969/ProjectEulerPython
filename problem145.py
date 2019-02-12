@@ -9,27 +9,24 @@ def isUneven(n):
             return False     
     return True
 
-def test(n):
-    r = 0
-    for i in range(n-10000,n):
-        r += i
-    return r
-
-a = 0
-def thread(limit):
+def thread(start,limit):
     x = 0
-    for i in range((int)(limit/10),limit):
+    for i in range(start,limit):
         if i % 10 != 0:
             a = i + reverse(i)
             if isUneven(a):
                 x += 1
     print(x)
     return x
-
-#improve algorithm 
+l = [ ( 10**8 , 2* (10**8) ) , ( 2* (10**8) , 3* (10**8) ) , ( 3* (10**8) , 4* (10**8) ) , ( 4* (10**8) , 5* (10**8) ) ]
+k = [ ( 5* (10**8) , 6* (10**8) ) , ( 6* (10**8) , 7* (10**8) ) , ( 7* (10**8) , 8* (10**8) ) , ( 8* (10**8) , 9* (10**8) ) , ( ( 9* (10**8) , 10**9 ) ) ]
 a = 0
 if __name__ == '__main__':
-    p = Pool(5)
-    for i in p.map(thread,[10**1,10**2,10**3,10**4,10**5,10**6,10**7,10**8,10**9]):
+    p = Pool(6)
+    for i in p.starmap(thread,l):
         a += i
     print(a)
+
+    #18720 // 1-10**6
+    #50000 // 10**6 - 10**7
+    #734400 // 10**7 - 10**8
