@@ -4,4 +4,10 @@ def getSum(n):
         temp += ((int)(char))**2
     return temp
 
-print(getSum(442))
+total = 0
+for n in range(1,10**20):
+    total += getSum(n)
+    if n % 1000000 == 0:
+        print('{} {}'.format(total,n))
+
+print('{}EXIT'.format(total))
