@@ -11,11 +11,13 @@ def isUneven(n):
     return True
 
 x = 0
-for i in range(10**3):
+a = 0
+for i in range(10**9):
     if i % 10 != 0:
     #print('{} + {} = {} ... {}'.format(i,reverse(i), i+reverse(i), isUneven(i+reverse(i))))
-        if isUneven(i + reverse(i)):
-            print('{}......{}'.format(i,i+reverse(i)))
+        a = i + reverse(i)
+        if isUneven(a):
+            print('{}......{}'.format(i,a))
             x += 1
 
 print(x)
