@@ -1,10 +1,12 @@
 #unsolved
 tree = [200,100,50,20,10,5,2,1]
 totallist = []
-
 templist = set()
+#find good datastructure
+#should be able to compare
+#nested structure allowed
 
-#USE SET 
+
 
 def traverse(node,coin):
     coin += tree[node]
