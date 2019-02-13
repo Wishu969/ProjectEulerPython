@@ -5,6 +5,7 @@ templist = set()
 #find good datastructure
 #should be able to compare
 #nested structure allowed
+#must have push(),pop() or append(),remove()
 
 
 
