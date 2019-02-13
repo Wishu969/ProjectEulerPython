@@ -10,11 +10,12 @@ class datalist:
     def push(self,n): self.datalist += (n, )
     def pop(self): self.datalist = tuple(list(self.datalist).pop())
     def sort(self): self.datalist = tuple(list(self.datalist).sort())
-    def contains(self,n): return True if n in list(datalist) else False
-        
-def traverse(node,coin = 0,templist = tuple(),totallist = tuple()):
+    def contains(self,n): return True if n in list(self.datalist) else False
+
+
+def traverse(node,coin = 0,templist = datalist(),totallist = datalist()):
     coin += tree[node]
-    templist += (tree[node], )
+    templist.push(tree[node])
     if coin == 200:
         print(templist)
         if templist not in totallist:
