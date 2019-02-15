@@ -1,3 +1,4 @@
+#solved
 def isPalindrome(n):
     return True if list(str(n)) == list(reversed(list(str(n)))) else False
 
