@@ -23,5 +23,5 @@ def equal(x,y,z):
             if a < c: a = next(x)
             if a - b - c == -a:
                 return a
-                
-print(next(equal(triangle(286),pentagonal(165),hexagonal(143))))
+                  
+print(equal(triangle(286),pentagonal(165),hexagonal(143)))
