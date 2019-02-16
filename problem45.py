@@ -1,12 +1,27 @@
-def triangle(n): return (int)((n * (n + 1) ) / 2)
-def pentagonal(n): return (int)(n * (3*n - 1) / 2)
-def hexagonal(n): return (int)(n * (2*n - 1))
+def triangle(n=2): 
+    while True:
+        yield (int)((n * (n + 1) ) / 2)
+        n += 1
 
-for t in range(1,300):
-    for p in range(1,300):
-        for h in range(1,300):
-            x = triangle(t)
-            y = pentagonal(p)
-            z = hexagonal(h)
-            if x == y and x == z:
-                print(x+y+z)
+def pentagonal(n=2): 
+    while True:
+        yield (int)(n * (3*n - 1) / 2)
+        n += 1
+
+def hexagonal(n=2): 
+    while True:
+        yield (int)(n * (2*n - 1))
+        n += 1
+
+def equal(x,y,z):
+    a,b,c = next(x),next(y),next(z)
+    while True:
+        if a > b: b = next(y)
+        if a < b: a = next(x)
+        if a == b:
+            if a > c: c = next(z)
+            if a < c: a = next(x)
+            if a - b - c == -a:
+                return a
+                
+print(next(equal(triangle(286),pentagonal(165),hexagonal(143))))
