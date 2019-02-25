@@ -1,6 +1,4 @@
-#proper divisor
-#limit 28123
-#sum of TWO numbers
+#solved
 with open(r'D:\Python\Courses\ProjectEulergithub\Database\databaseProblem23') as file:
     lines = file.read().splitlines()
 lines = list(map(int, lines))
@@ -25,19 +23,15 @@ def search(n, l):
     y = len(l) - 1
     x = 0
     while l[x] + l[y] != n:
-        #print('{} {} = {}'.format(x,y,l[x] + l[y]))
-        if l[x] == l[y]: return True
-        if x > y: return True
+        if l[x] == l[y]: return False
+        if x > y: return False
         if l[x] + l[y] > n: y -= 1
         if l[x] + l[y] < n: x += 1
-    return False
+    return True
 
 test = 0
-for i in range(1,1):
-    if search(i,full):
+for i in range(1,28124):
+    if not search(i,lines):
         print(i)
-        test += 1
-
-print(lines)
-#print(search(28124,full))
-#print(full)
+        test += i    
+print(test,test)
