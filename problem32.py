@@ -1,5 +1,6 @@
 a = []
 b = []
+c = []
 
 def insert(a,b,c):
     test = []
@@ -18,20 +19,24 @@ def is_pan(l):
     return True
 
 # 39 × 186 = 7254
-print(is_pan(insert(39,186,7254)))
+#print(is_pan(insert(39,186,7254)))
 q = 0
+
 for x in range(1,999):
     for y in range(1,999):
         if x in b and y in a: pass
         else:
-            test = []
-            if x*y == y*x:
-                z = x * y
-                test = insert(x,y,z)
-                if is_pan(test):
-                    print('product found', x,y,z)
-                    q += z
-                    a.append(x)
-                    b.append(y)
+            z = x * y     
+            if len(str(z)) + len(str(x)) + len(str(y)) == 9:
+               # print(x,y,z)
+                if z in c: pass
+                else:               
+                    if is_pan(insert(x,y,z)):
+
+                        print('product found', x,y,z)
+                        q += z
+                        a.append(x)
+                        b.append(y)
+                        c.append(z)
 
 print(q)
